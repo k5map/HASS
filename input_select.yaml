@@ -1,0 +1,18 @@
+#
+# Use this file for input select information
+#
+
+hass_theme:
+  name: HASS Themes
+  icon: mdi:theme-light-dark
+  options:
+    - default
+    - crs
+    - dark_cyan
+    - maroon
+    - matrix_theme
+    - midnight
+    - night_theme
+    - solarized
+    - wood
+  initial: default

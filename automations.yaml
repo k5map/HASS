@@ -1,0 +1,55 @@
+################################################################
+- alias: 'Update Notification'
+  trigger:
+    platform: state
+    entity_id: updater.updater
+  action:
+    service: notify.notify
+    data:
+      title: 'New HA release'
+      message: 'Home Assistant {{states.updater.updater.state}} is now available...'
+
+################################################################
+- alias: 'HASS Start'
+  trigger:
+    platform: event
+    event_type: homeassistant_start
+  action:
+    service: notify.notify
+    data:
+      message: 'HA started' 
+# message:  'Home Assistant started: {{ as_timestamp(now()) | timestamp_custom("%b %d %X") }}'      
+
+################################################################
+- alias: 'HASS Stop'
+  trigger:
+    platform: event
+    event_type: homeassistant_stop
+  action:
+    service: notify.notify
+    data:
+      message: 'HA stopped'  
+
+################################################################
+- alias: 'Backyard Light Timer'
+  trigger:
+    platform: state
+    entity_id: switch.back_yard_lights
+    to: 'on'
+    for:
+      minutes: 30
+  action:
+    service: notify.notify
+    data:
+      message: 'Backyard lights are on...'
+################################################################
+- id: hass_theme
+  alias: hass_theme
+  initial_state: 'on'
+  trigger: 
+    - platform: state
+      entity_id: input_select.hass_theme
+  action:
+    - service: frontend.set_theme
+      data_template:
+        name: "{{ states.input_select.hass_theme.state }}"

@@ -1,0 +1,139 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret latitude_home
+  longitude: !secret longitude_home
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 33
+  # metric for Metric, imperial for Imperial
+  unit_system: imperial
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: America/Chicago
+  # Customization file
+  customize: !include customize.yaml
+
+# Show links to resources in log and frontend
+# introduction:
+
+# Enables the frontend
+frontend:
+  themes: !include_dir_merge_named themes/
+#  themes: !include themes.yaml
+#  javascript_version: latest
+#  extra_html_url:
+#    - /local/custom_ui/state-card-tiles.html
+
+# Enables configuration UI
+config:
+
+http:
+  # Secrets are defined in the file secrets.yaml
+  # api_password: !secret http_password
+  # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+  # base_url: example.duckdns.org:8123
+
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  # include_used_components: true
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time
+history:
+
+# View all events in a logbook
+logbook:
+
+# Enables a map showing the location of tracked devices
+map:
+
+# Track the sun
+sun:
+
+# Text to speech
+tts:
+  - platform: google
+
+# Cloud
+cloud:
+
+# Panel iFrame
+panel_iframe:
+  router:
+    title: 'Linksys AP'
+#    icon: mdi:router-wireless
+    url: 'http://172.28.254.5'
+
+# Web links
+weblink:
+  entities:
+    - name: Home Assistant
+      url: https://www.home-assistant.io
+    - name: OpenGarage
+      url: http://opengarage.io 
+    - name: Home Assistant Cookbook
+      url: https://www.home-assistant.io/cookbook/
+    - name: Garadget
+      url: http://www.garadget.com
+    - name: BRUH Automation videos
+      url: https://www.youtube.com/channel/UCLecVrux63S6aYiErxdiy4w
+    - name: BurnsHA videos
+      url: https://www.youtube.com/channel/UCSKQutOXuNLvFetrKuwudpg
+    - name: PiVPN
+      url: http://www.pivpn.io/
+    - name: HADashboard
+      url: http://appdaemon.readthedocs.io/en/stable/DASHBOARD_INSTALL.html
+
+## DEVICES ##
+isy994:
+  host: http://172.28.254.10:80
+  username: !secret username_isy
+  password: !secret password_isy
+#  tls: 1.2
+#  scan_interval: 3
+    
+switch pi:
+  platform: rpi_gpio
+  ports:
+    18: LED Pi
+
+camera:
+  platform: generic
+  still_image_url: https://radblast.wunderground.com/cgi-bin/radar/WUNIDS_map?station=IAH&brand=wui&num=6&delay=15&type=TR0&frame=0&scale=1&noclutter=0&showstorms=0&mapx=400&mapy=240&centerx=400&centery=240&transx=0&transy=0&showlabels=1&severe=0&rainsnow=0&lightning=0&smooth=0&rand=25424802&lat=0&lon=0&label=you
+  name: Weather Radar
+  
+## DEVICE TRACKER ##
+device_tracker:
+  - platform: cisco_ios
+    host: 172.28.254.1
+    username: !secret username_asa
+    password: !secret password_asa
+    interval_seconds: 30
+    consider_home: 0:03
+    new_device_defaults:
+      track_new_devices: True
+      hide_if_away: False
+    
+## NOTIFICATION ##
+notify:
+  name: notify
+  platform: sendgrid
+  api_key: !secret api_key_sendgrid
+  sender: mpate@AThirdOpinion.com
+  recipient: !secret recipient_sendgrid
+
+sensor: !include sensors.yaml
+group: !include groups.yaml
+automation: !include automations.yaml
+input_select: !include input_select.yaml
+script: !include scripts.yaml

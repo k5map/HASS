@@ -1,0 +1,118 @@
+#
+# Speed Test
+#
+- platform: speedtest 
+  minute:
+    - 0
+    - 30    
+  monitored_conditions:
+    - ping 
+    - download 
+    - upload 
+#
+# System Monitor
+#
+- platform: systemmonitor
+  resources:
+    - type: processor_use
+    - type: memory_use_percent
+    - type: disk_use_percent
+      arg: /
+    - type: load_1m
+    - type: load_5m
+    - type: load_15m
+# - type: since_last_boot
+
+- platform: command_line
+  name: Installed HA Version
+  command: /srv/homeassistant/bin/hass --version
+  scan_interval: 3600
+
+- platform: command_line
+  name: CPU Temp
+  command: "cat /sys/class/thermal/thermal_zone0/temp"
+  unit_of_measurement: "C"
+# C *1.8 + 32 = F
+  value_template: '{{ value | multiply(0.001) | round(1) }}'  
+
+#
+# Weather Underground
+#
+- platform: wunderground
+  api_key: !secret api_key_wunderground
+  monitored_conditions:
+    - weather
+    - temp_f
+    - feelslike_f
+    - wind_mph
+    - relative_humidity
+    - precip_today_in
+    - alerts
+    - heat_index_f
+    - heat_index_string
+    - observation_time
+    - station_id
+    - solarradiation
+    - weather_2d
+    - weather_2n
+#
+# Weather Prediction
+#
+# - platform: yr
+#
+# Google Travel
+#
+- platform: google_travel_time
+  name: Home to Work
+  api_key: !secret api_key_google
+  origin: !secret addr_home
+  destination: !secret addr_work
+# can be ["driving", "walking", "bicycling", "transit"]
+#    travel_mode: driving 
+
+- platform: google_travel_time
+  name: Work to Home
+  api_key: !secret api_key_google
+  origin: !secret addr_work
+  destination: !secret addr_home
+#
+# Yahoo Finance
+#
+- platform: yahoo_finance
+  symbols:
+    - HCLP
+    - SLCA
+    - FMSA
+    - CL=F
+#
+# Birthdays and Anniversaries
+#
+- platform: command_line
+  name: Anniversary Countdown
+  unit_of_measurement: days
+  scan_interval: 3600
+  command: "BDAY=`date -d '6 Nov 1982' +%j | awk '{print $1 + 0}'`; TODAY=`date +%j | awk '{print $1 + 0}'`; DAYS=$(($BDAY - $TODAY)); echo $DAYS"
+    
+- platform: command_line
+  name: Birthday Countdown Mike
+  unit_of_measurement: days
+  scan_interval: 3600
+  command: "BDAY=`date -d '15 Sep 1960' +%j | awk '{print $1 + 0}'`; TODAY=`date +%j | awk '{print $1 + 0}'`; DAYS=$(($BDAY - $TODAY)); echo $DAYS"
+    
+- platform: command_line
+  name: Birthday Countdown Laura
+  unit_of_measurement: days
+  scan_interval: 3600
+  command: "BDAY=`date -d '17 Sep 1960' +%j | awk '{print $1 + 0}'`; TODAY=`date +%j | awk '{print $1 + 0}'`; DAYS=$(($BDAY - $TODAY)); echo $DAYS"
+
+- platform: command_line
+  name: Birthday Countdown Steven
+  unit_of_measurement: days
+  scan_interval: 3600
+  command: "BDAY=`date -d '6 Apr 1990' +%j | awk '{print $1 + 0}'`; TODAY=`date +%j | awk '{print $1 + 0}'`; DAYS=$(($BDAY - $TODAY)); echo $DAYS"
+  
+- platform: command_line
+  name: Birthday Countdown Julie
+  unit_of_measurement: days
+  scan_interval: 3600
+  command: "BDAY=`date -d '18 Jan 1994' +%j | awk '{print $1 + 0}'`; TODAY=`date +%j | awk '{print $1 + 0}'`; DAYS=$(($BDAY - $TODAY)); echo $DAYS"

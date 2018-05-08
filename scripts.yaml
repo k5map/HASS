@@ -1,0 +1,11 @@
+# 
+reload_hass_config:
+  sequence:
+    - service: automation.reload
+    - service: homeassistant.reload_core_config
+    - service: frontend.reload_themes
+
+# 
+restart_hass:
+  sequence:
+    - service: homeassistant.restart

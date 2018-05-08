@@ -1,0 +1,8 @@
+
+linksys04353:
+  hide_if_away: false
+  icon:
+  mac: 60:38:E0:CA:6C:18
+  name: Linksys04353
+  picture:
+  track: true
