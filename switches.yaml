@@ -7,8 +7,8 @@
   ports:
     18: LED Pi
 
-# ???
-# more info: https://forum.universal-devices.com/topic/22201-home-assistant-and-isy/
+# Vacation state variable in ISY
+# Learn more at https://forum.universal-devices.com/topic/22201-home-assistant-and-isy/
 - platform: command_line
   switches:
     vacation:
@@ -19,7 +19,8 @@
       command_state: >-
         curl -X GET http://admin:admin@172.28.254.10/rest/vars/get/2/1/
       value_template: >-
-        {{ '<val>0</val>' in value }}
+        {{ '<val>1</val>' in value }}
+      friendly_name: Vacation State
 
 # Sprinkler
 #- platform: command_line
