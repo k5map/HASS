@@ -1,0 +1,35 @@
+#
+# Learn more at https://home-assistant.io/components/switch/
+#
+
+# Raspberry Pi
+- platform: rpi_gpio
+  ports:
+    18: LED Pi
+
+# ???
+# more info: https://forum.universal-devices.com/topic/22201-home-assistant-and-isy/
+- platform: command_line
+  switches:
+    alarm:
+      command_on: >-
+        curl -X GET http://admin:pass@192.168.1.200/rest/vars/set/2/21/0
+      command_off: >-
+        curl -X GET http://admin:pass@192.168.1.200/rest/vars/set/2/21/1
+      command_state: >-
+        curl -X GET http://admin:pass@192.168.1.200/rest/vars/get/2/21/
+      value_template: >-
+        {{ '<val>0</val>' in value }}
+
+# Sprinkler
+- platform: command_line
+  switches:
+    frontyardgrass:
+      command_on: >-
+        curl -X GET http://admin:pass@192.168.1.200/rest/nodes/3D%20D0%20B2%201/cmd/DON
+      command_off: >-
+        curl -X GET http://admin:pass@192.168.1.200/rest/nodes/3D%20D0%20B2%201/cmd/DOF
+      command_state: >-
+        curl -X GET http://admin:pass@192.168.1.200/rest/status/3D%20D0%20B2%201/
+      value_template: >-
+        {{ 'd="On" u' in value }}

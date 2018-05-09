@@ -74,26 +74,6 @@ panel_iframe:
 #    icon: mdi:router-wireless
     url: 'http://172.28.254.5'
 
-# Web links
-weblink:
-  entities:
-    - name: Home Assistant
-      url: https://www.home-assistant.io
-    - name: OpenGarage
-      url: http://opengarage.io 
-    - name: Home Assistant Cookbook
-      url: https://www.home-assistant.io/cookbook/
-    - name: Garadget
-      url: http://www.garadget.com
-    - name: BRUH Automation videos
-      url: https://www.youtube.com/channel/UCLecVrux63S6aYiErxdiy4w
-    - name: BurnsHA videos
-      url: https://www.youtube.com/channel/UCSKQutOXuNLvFetrKuwudpg
-    - name: PiVPN
-      url: http://www.pivpn.io/
-    - name: HADashboard
-      url: http://appdaemon.readthedocs.io/en/stable/DASHBOARD_INSTALL.html
-
 ## DEVICES ##
 isy994:
   host: http://172.28.254.10:80
@@ -102,16 +82,6 @@ isy994:
 #  tls: 1.2
 #  scan_interval: 3
     
-switch pi:
-  platform: rpi_gpio
-  ports:
-    18: LED Pi
-
-camera:
-  platform: generic
-  still_image_url: https://radblast.wunderground.com/cgi-bin/radar/WUNIDS_map?station=IAH&brand=wui&num=6&delay=15&type=TR0&frame=0&scale=1&noclutter=0&showstorms=0&mapx=400&mapy=240&centerx=400&centery=240&transx=0&transy=0&showlabels=1&severe=0&rainsnow=0&lightning=0&smooth=0&rand=25424802&lat=0&lon=0&label=you
-  name: Weather Radar
-  
 ## DEVICE TRACKER ##
 device_tracker:
   - platform: cisco_ios
@@ -132,8 +102,12 @@ notify:
   sender: mpate@AThirdOpinion.com
   recipient: !secret recipient_sendgrid
 
+## INCLUDES ##
 sensor: !include sensors.yaml
 group: !include groups.yaml
+camera: !include cameras.yaml
 automation: !include automations.yaml
 input_select: !include input_select.yaml
+switch: !include switches.yaml
+weblink: !include weblink.yaml
 script: !include scripts.yaml

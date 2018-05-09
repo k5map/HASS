@@ -1,4 +1,8 @@
 #
+# Learn more at https://www.home-assistant.io/docs/configuration/customizing-devices/
+#
+
+#
 # Weather
 #
 sensor.pws_weather: 
@@ -49,22 +53,32 @@ binary_sensor.back_doorsensor:
   friendly_name: 'Back Door Motion Sensor'
   icon: mdi:walk
 switch.master_bedroom_table_lamp:
-  icon: mdi:lightbulb
+  icon: mdi:lamp
 switch.den_table_lamp_stairs:
-  icon: mdi:lightbulb
+  icon: mdi:lamp
 switch.den_table_lamp_tv:
-  icon: mdi:lightbulb
+  icon: mdi:lamp
 switch.front_door_xmas_spot_light:
   friendly_name: 'Front Door Xmas Spotlight'
   icon: mdi:spotlight-beam
 switch.back_yard_lights:
   icon: mdi:spotlight-beam
-light.fireplace_xmas_lights:
-  icon: mdi:led-on
 switch.christmas_tree__top:
   icon: mdi:pine-tree
 switch.christmas_tree__bot:
   icon: mdi:pine-tree
+switch.candle_master_br_bot:
+  icon: mid:candle
+switch.candle_master_br_top:
+  icon: mid:candle
+light.fireplace_xmas_lights:
+  icon: mdi:led-on
+light.candle_dining_room:
+  icon: mid:candle
+light.candle_upstairs_bedroom:
+  icon: mid:candle
+light.candle_upstairs_bathroom:
+  icon: mid:candle
 #
 # Google Travel
 #

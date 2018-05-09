@@ -1,4 +1,7 @@
-# 
+#
+# Learn more at https://home-assistant.io/components/script/
+#
+ 
 reload_hass_config:
   sequence:
     - service: automation.reload

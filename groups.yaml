@@ -1,6 +1,7 @@
-################################################
-## VIEWS ##
-################################################
+#
+# Learn more at https://www.home-assistant.io/components/group/
+#
+
 _Home Home:   
 #  name: Default
   view: yes
@@ -147,10 +148,16 @@ christmas lights:
   entities:
     - switch.christmas_lights_inside
     - switch.christmas_lights_outside
-    - light.fireplace_xmas_lights
     - switch.christmas_tree__top
     - switch.christmas_tree__bot
     - switch.front_door_xmas_spot_light
+    - switch.candle_master_br_bot
+    - switch.candle_master_br_top
+    - light.fireplace_xmas_lights
+    - light.candle_dining_room
+    - light.candle_upstairs_bedroom
+    - light.candle_upstairs_bathroom
+
 Birthday Info:
   entities:
     - sensor.anniversary_countdown

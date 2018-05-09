@@ -1,0 +1,23 @@
+#
+# Learn more at https://www.home-assistant.io/components/weblink/
+#
+# Web links
+
+entities:
+- name: Home Assistant
+  url: https://www.home-assistant.io
+- name: OpenGarage
+  url: http://opengarage.io 
+- name: Home Assistant Cookbook
+  url: https://www.home-assistant.io/cookbook/
+- name: Garadget
+  url: http://www.garadget.com
+- name: BRUH Automation videos
+  url: https://www.youtube.com/channel/UCLecVrux63S6aYiErxdiy4w
+- name: BurnsHA videos
+  url: https://www.youtube.com/channel/UCSKQutOXuNLvFetrKuwudpg
+- name: PiVPN
+  url: http://www.pivpn.io/
+- name: HADashboard
+  url: http://appdaemon.readthedocs.io/en/stable/DASHBOARD_INSTALL.html
+

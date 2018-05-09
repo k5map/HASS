@@ -1,4 +1,8 @@
 #
+# Learn more at https://home-assistant.io/components/sensor/
+#
+
+#
 # Speed Test
 #
 - platform: speedtest 
