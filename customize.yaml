@@ -67,18 +67,18 @@ switch.christmas_tree__top:
   icon: mdi:pine-tree
 switch.christmas_tree__bot:
   icon: mdi:pine-tree
-switch.candle_master_br_bot:
-  icon: mid:candle
-switch.candle_master_br_top:
-  icon: mid:candle
+switch.candle_master_br__bot:
+  icon: mdi:candle
+switch.candle_master_br__top:
+  icon: mdi:candle
 light.fireplace_xmas_lights:
   icon: mdi:led-on
 light.candle_dining_room:
-  icon: mid:candle
+  icon: mdi:candle
 light.candle_upstairs_bedroom:
-  icon: mid:candle
+  icon: mdi:candle
 light.candle_upstairs_bathroom:
-  icon: mid:candle
+  icon: mdi:candle
 #
 # Google Travel
 #

@@ -11,25 +11,25 @@
 # more info: https://forum.universal-devices.com/topic/22201-home-assistant-and-isy/
 - platform: command_line
   switches:
-    alarm:
+    vacation:
       command_on: >-
-        curl -X GET http://admin:pass@192.168.1.200/rest/vars/set/2/21/0
+        curl -X GET http://admin:admin@172.28.254.10/rest/vars/set/2/1/1
       command_off: >-
-        curl -X GET http://admin:pass@192.168.1.200/rest/vars/set/2/21/1
+        curl -X GET http://admin:admin@172.28.254.10/rest/vars/set/2/1/0
       command_state: >-
-        curl -X GET http://admin:pass@192.168.1.200/rest/vars/get/2/21/
+        curl -X GET http://admin:admin@172.28.254.10/rest/vars/get/2/1/
       value_template: >-
         {{ '<val>0</val>' in value }}
 
 # Sprinkler
-- platform: command_line
-  switches:
-    frontyardgrass:
-      command_on: >-
-        curl -X GET http://admin:pass@192.168.1.200/rest/nodes/3D%20D0%20B2%201/cmd/DON
-      command_off: >-
-        curl -X GET http://admin:pass@192.168.1.200/rest/nodes/3D%20D0%20B2%201/cmd/DOF
-      command_state: >-
-        curl -X GET http://admin:pass@192.168.1.200/rest/status/3D%20D0%20B2%201/
-      value_template: >-
-        {{ 'd="On" u' in value }}
+#- platform: command_line
+#  switches:
+#    frontyardgrass:
+#      command_on: >-
+#        curl -X GET http://admin:pass@192.168.1.200/rest/nodes/3D%20D0%20B2%201/cmd/DON
+#      command_off: >-
+#        curl -X GET http://admin:pass@192.168.1.200/rest/nodes/3D%20D0%20B2%201/cmd/DOF
+#      command_state: >-
+#        curl -X GET http://admin:pass@192.168.1.200/rest/status/3D%20D0%20B2%201/
+#      value_template: >-
+#        {{ 'd="On" u' in value }}
