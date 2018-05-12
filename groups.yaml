@@ -2,6 +2,9 @@
 # Learn more at https://www.home-assistant.io/components/group/
 #
 
+################################################
+## VIEWS ##
+################################################
 _Home Home:   
 #  name: Default
   view: yes
@@ -15,7 +18,75 @@ _Home Home:
     - group.stocks
     - group.traffic
 
+traffic_view:
+  name: Traffic
+  view: yes
+  entities:
+    - group.traffic_info 
+
+internet_view:
+  name: Internet
+  view: yes
+  entities:
+    - group.internet_test 
+    - sensor.speedtest_download 
+    - sensor.speedtest_upload 
+
+system_view:
+  name: System
+  view: yes
+  entities:
+    - group.system_info
+
+birthday_view:
+  name: Birthdays
+  view: yes
+  icon: mdi:candle
+  entities:
+    - group.birthday_info
+
+stocks_view:
+  name: Stocks
+  icon: mdi:currency-usd
+  view: yes
+  entities:
+    - sensor.hclp
+    - sensor.fmsa
+    - sensor.slca
+    - sensor.clf
+
+automation_view:
+  name: Automation
+  view: yes
+  entities:
+    - automation.hass_start
+    - automation.update_notification    
+    - automation.backyard_light_timer
+    - script.reload_hass_config
+    - script.restart_hass
+
+christmas lights:
+  name: Christmas
+  view: yes
+#  icon: mdi:pine-tree
+  entities:
+    - switch.candles
+    - switch.christmas_lights_inside
+    - switch.christmas_lights_outside
+    - switch.christmas_tree__top
+    - switch.christmas_tree__bot
+    - switch.front_door_xmas_spot_light
+    - switch.candle_master_br__bot
+    - switch.candle_master_br__top
+    - light.fireplace_xmas_lights
+    - light.candle_dining_room
+    - light.candle_upstairs_bedroom
+    - light.candle_upstairs_bathroom
+
 #
+################################################
+## GROUPS ##
+################################################
 weather:
   name: Weather
   view: no
@@ -42,50 +113,20 @@ weather:
 #    - sensor.pws_temperature_string
 #    - sensor.pws_temp_high_1d_f
 #    - sensor.pws_temp_low_1d_f
-#
-traffic:
-  name: Traffic
-  view: yes
-  entities:
-    - group.traffic_info 
-#
-internet:
-  name: Internet
-  view: yes
-  entities:
-    - group.internet_test 
-    - sensor.speedtest_download 
-    - sensor.speedtest_upload 
-#
-system:
-  name: System
-  view: yes
-  entities:
-    - group.system_info
-#
-birthday:
-  name: Birthdays
-  view: yes
-  icon: mdi:candle
-  entities:
-    - group.birthday_info
-#
-################################################
-## GROUPS ##
-################################################
+
 Traffic Info:
   entities:
     - sensor.home_to_work 
     - sensor.work_to_home 
     - camera.weather_radar
-#
+
 Internet Test:
   name: Internet
   entities:
     - sensor.speedtest_ping 
     - sensor.speedtest_download 
     - sensor.speedtest_upload 
-#
+
 System Info:
 #  name: System
   entities:
@@ -97,27 +138,7 @@ System Info:
     - sensor.load_15m
     - sensor.cpu_temp
     - sensor.installed_ha_version
-#
-stocks:
-  name: Stocks
-  icon: mdi:currency-usd
-  view: yes
-  entities:
-    - sensor.hclp
-    - sensor.fmsa
-    - sensor.slca
-    - sensor.clf
-#
-automation group:
-  name: Automation
-  view: yes
-  entities:
-    - automation.hass_start
-    - automation.update_notification    
-    - automation.backyard_light_timer
-    - script.reload_hass_config
-    - script.restart_hass
-#
+
 outside devices:
   name: Outside
   view: no
@@ -130,34 +151,19 @@ outside devices:
     - switch.back_yard_lights 
     - switch.garage_light
     - switch.outside_lights
+
 master bedroom:
   name: Master Bedroom
   view: no
   entities:
     - switch.master_bedroom_table_lamp
+
 den:
   name: Den
   view: no
   entities:
     - switch.den_table_lamp_tv
     - switch.den_table_lamp_stairs
-christmas lights:
-  name: Christmas
-  view: yes
-#  icon: mdi:pine-tree
-  entities:
-    - switch.candles
-    - switch.christmas_lights_inside
-    - switch.christmas_lights_outside
-    - switch.christmas_tree__top
-    - switch.christmas_tree__bot
-    - switch.front_door_xmas_spot_light
-    - switch.candle_master_br__bot
-    - switch.candle_master_br__top
-    - light.fireplace_xmas_lights
-    - light.candle_dining_room
-    - light.candle_upstairs_bedroom
-    - light.candle_upstairs_bathroom
 
 Birthday Info:
   entities:
