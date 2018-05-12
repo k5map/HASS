@@ -51,7 +51,7 @@ sensor.clf:
 #
 binary_sensor.back_doorsensor:
   friendly_name: 'Back Door Motion Sensor'
-  icon: mdi:walk
+  icon: mdi:theme-light-dark
 switch.master_bedroom_table_lamp:
   icon: mdi:lamp
 switch.den_table_lamp_stairs:

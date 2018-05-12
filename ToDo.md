@@ -10,7 +10,8 @@
   - [ ] Install device and pair to ISY
   - [ ] Setup device in HASS
 - [ ] Investigate and implement motion sensor in Den
-  - [ ] If sensor has light detector, setup in HASS to turn on Den light weekday
+  - [ ] Determine which sensor to purcahse
+  - [ ] If sensor has light detector, setup in HASS to turn on Den light weekday mornings
 - [x] Implement in HASS link to 'vacation' state in ISY
 - [ ] Implement in HASS link to 'christmas' state in ISY
 - [ ] Investigate and implement device tracking in HASS
