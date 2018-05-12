@@ -21,6 +21,7 @@ _Home Home:
 traffic_view:
   name: Traffic
   view: yes
+  icon: mdi:car
   entities:
     - group.traffic_info 
 
@@ -35,6 +36,7 @@ internet_view:
 system_view:
   name: System
   view: yes
+  icon: mdi:laptop-windows
   entities:
     - group.system_info
 
@@ -68,7 +70,7 @@ automation_view:
 christmas lights:
   name: Christmas
   view: yes
-#  icon: mdi:pine-tree
+  icon: mdi:candycane
   entities:
     - switch.candles
     - switch.christmas_lights_inside
@@ -83,7 +85,7 @@ christmas lights:
     - light.candle_upstairs_bedroom
     - light.candle_upstairs_bathroom
 
-#
+
 ################################################
 ## GROUPS ##
 ################################################
@@ -128,7 +130,6 @@ Internet Test:
     - sensor.speedtest_upload 
 
 System Info:
-#  name: System
   entities:
     - sensor.processor_use
     - sensor.disk_use_percent_
