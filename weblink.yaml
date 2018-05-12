@@ -20,4 +20,6 @@ entities:
   url: http://www.pivpn.io/
 - name: HADashboard
   url: http://appdaemon.readthedocs.io/en/stable/DASHBOARD_INSTALL.html
+- name: HA icons
+  url: https://materialdesignicons.com/
 

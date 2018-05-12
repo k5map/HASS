@@ -90,3 +90,14 @@ sensor.home_to_work:
   icon: mdi:car
 sensor.work_to_home:
   icon: mdi:car
+#
+# Pollen
+#
+sensor.allergy_index_historical_average:
+  hidden: true
+sensor.allergy_index_today:
+  hidden: true
+sensor.allergy_index_tomorrow:
+  hidden: true
+sensor.allergy_index_yesterday:
+  hidden: true

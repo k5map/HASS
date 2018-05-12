@@ -57,16 +57,6 @@ stocks_view:
     - sensor.slca
     - sensor.clf
 
-automation_view:
-  name: Automation
-  view: yes
-  entities:
-    - automation.hass_start
-    - automation.update_notification    
-    - automation.backyard_light_timer
-    - script.reload_hass_config
-    - script.restart_hass
-
 christmas lights:
   name: Christmas
   view: yes
@@ -85,6 +75,16 @@ christmas lights:
     - light.candle_upstairs_bedroom
     - light.candle_upstairs_bathroom
 
+automation_view:
+  name: Automation
+  view: yes
+  entities:
+    - automation.hass_start
+    - automation.update_notification    
+    - automation.backyard_light_timer
+    - script.reload_hass_config
+    - script.restart_hass
+
 
 ################################################
 ## GROUPS ##
@@ -101,6 +101,7 @@ weather:
     - sensor.pws_precip_today_in
     - sensor.pws_alerts
     - sun.sun
+    - sensor.allergy_index_forecasted_average
     - sensor.pws_alerts
 #    - sensor.pws_feelslike_string
     - sensor.pws_heat_index_f

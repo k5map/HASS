@@ -80,6 +80,17 @@
   origin: !secret addr_work
   destination: !secret addr_home
 #
+# Pollen
+#
+- platform: pollen
+  zip_code: !secret my_zipcode
+  monitored_conditions:
+    - allergy_average_forecasted
+    - allergy_average_historical
+    - allergy_index_today
+    - allergy_index_tomorrow
+    - allergy_index_yesterday
+#
 # Yahoo Finance
 #
 - platform: yahoo_finance
