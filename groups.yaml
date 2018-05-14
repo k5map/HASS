@@ -17,6 +17,7 @@ _Home Home:
     - group.master_bedroom
     - group.stocks
     - group.traffic
+    - group.garage
 
 traffic_view:
   name: Traffic
@@ -24,21 +25,8 @@ traffic_view:
   icon: mdi:car
   entities:
     - group.traffic_info 
-
-internet_view:
-  name: Internet
-  view: yes
-  entities:
-    - group.internet_test 
-    - sensor.speedtest_download 
-    - sensor.speedtest_upload 
-
-system_view:
-  name: System
-  view: yes
-  icon: mdi:laptop-windows
-  entities:
-    - group.system_info
+    - group.garage
+    - camera.weather_radar
 
 birthday_view:
   name: Birthdays
@@ -75,6 +63,21 @@ christmas lights:
     - light.candle_upstairs_bedroom
     - light.candle_upstairs_bathroom
 
+system_view:
+  name: System
+  view: yes
+  icon: mdi:laptop-windows
+  entities:
+    - group.system_info
+
+internet_view:
+  name: Internet
+  view: yes
+  entities:
+    - group.internet_test 
+    - sensor.speedtest_download 
+    - sensor.speedtest_upload 
+
 automation_view:
   name: Automation
   view: yes
@@ -89,11 +92,19 @@ automation_view:
 ################################################
 ## GROUPS ##
 ################################################
+garage:     
+  name: Garage
+  entities:
+    - cover.subaru
+    - sensor.garage_status
+    - sensor.garage_car_present     
+
 weather:
   name: Weather
   view: no
   entities:
     - sensor.pws_weather
+    - sensor.pollen_level
     - sensor.pws_temp_f
     - sensor.pws_relative_humidity
     - sensor.pws_feelslike_f
@@ -101,27 +112,19 @@ weather:
     - sensor.pws_precip_today_in
     - sensor.pws_alerts
     - sun.sun
-    - sensor.allergy_index_forecasted_average
     - sensor.pws_alerts
-#    - sensor.pws_feelslike_string
     - sensor.pws_heat_index_f
     - sensor.pws_heat_index_string
     - sensor.pws_weather_2d
     - sensor.pws_weather_2n
     - sensor.pws_observation_time
     - sensor.pws_station_id
-#    - sensor.pws_precip_today_string
-#    - sensor.pws_precip_1d_in
     - sensor.pws_solarradiation
-#    - sensor.pws_temperature_string
-#    - sensor.pws_temp_high_1d_f
-#    - sensor.pws_temp_low_1d_f
 
 Traffic Info:
   entities:
     - sensor.home_to_work 
     - sensor.work_to_home 
-    - camera.weather_radar
 
 Internet Test:
   name: Internet

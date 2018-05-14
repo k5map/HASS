@@ -47,6 +47,18 @@
     data:
       message: 'Backyard lights are on...'
 ################################################################
+- alias: 'Garage Light Timer'
+  trigger:
+    platform: state
+    entity_id: switch.garage_light
+    to: 'on'
+    for:
+      minutes: 30
+  action:
+    service: notify.notify
+    data:
+      message: 'Garage lights are on...'
+################################################################
 - id: hass_theme
   alias: hass_theme
   initial_state: 'on'

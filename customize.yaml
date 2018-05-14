@@ -3,6 +3,14 @@
 #
 
 #
+# OpenGarage
+#
+cover.subaru:
+  friendly_name: Subaru
+  entity_picture: /local/Subaru-logo-880x660.png
+sensor.garage_car_present:
+  icon: mdi:car
+#
 # Weather
 #
 sensor.pws_weather: 
@@ -23,6 +31,10 @@ sensor.pws_wind_mph:
   icon: mdi:weather-windy
 sensor.pws_alerts:
   friendly_name: 'Weather Alerts'
+sensor.pws_heat_index_string:
+  hidden: true
+sensor.pws_heat_index_f:
+  hidden: true
 #
 # Speed Test
 #
@@ -93,6 +105,10 @@ sensor.work_to_home:
 #
 # Pollen
 #
+sensor.allergy_index_forecasted_average:
+  hidden: true
+sensor.allergy_index_historical_average:
+  hidden: true
 sensor.allergy_index_historical_average:
   hidden: true
 sensor.allergy_index_today:
@@ -101,3 +117,5 @@ sensor.allergy_index_tomorrow:
   hidden: true
 sensor.allergy_index_yesterday:
   hidden: true
+sensor.pollen_level:
+  icon: mdi:flower

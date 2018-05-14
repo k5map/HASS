@@ -131,3 +131,48 @@
   unit_of_measurement: days
   scan_interval: 3600
   command: "BDAY=`date -d '18 Jan 1994' +%j | awk '{print $1 + 0}'`; TODAY=`date +%j | awk '{print $1 + 0}'`; DAYS=$(($BDAY - $TODAY)); echo $DAYS"
+
+#
+# TEMPLATES
+#
+- platform: template
+  sensors:
+    garage_status:
+      friendly_name: 'Door Status'
+      value_template: '{% if states.cover.subaru %}
+          {% if states.cover.subaru.attributes["door_state"] == "open" %}
+            Open
+          {% elif states.cover.subaru.attributes["door_state"] == "closed" %}
+            Closed
+          {% elif states.cover.subaru.attributes["door_state"] == "opening" %}
+            Opening
+          {% elif states.cover.subaru.attributes["door_state"] == "closing" %}
+            Closing
+          {% else %}
+            Unknown
+          {% endif %}
+          {% else %}
+          n/a
+          {% endif %}'
+    garage_car_present:
+      friendly_name: 'Subaru in Garage'
+      value_template: '{% if states.cover.subaru %}
+          {% if states.cover.subaru.state == "open" %}
+            n/a
+          {% elif ((states.cover.subaru.attributes["distance_sensor"] > 40) and (states.cover.subaru.attributes["distance_sensor"] < 100)) %}
+            Yes
+          {% else %}
+            No
+          {% endif %}
+          {% else %}
+          n/a
+          {% endif %}'
+    pollen_level:
+      friendly_name: 'Pollen Level'
+      value_template: >-
+        {%- if states.sensor.allergy_index_forecasted_average.state != None -%}
+          {{ states.sensor.allergy_index_forecasted_average.attributes.rating }}
+        {%- else -%}
+          NA
+        {%- endif -%}
+
