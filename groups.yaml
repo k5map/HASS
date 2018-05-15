@@ -85,6 +85,7 @@ automation_view:
     - automation.hass_start
     - automation.update_notification    
     - automation.backyard_light_timer
+#    - group.all_automations
     - script.reload_hass_config
     - script.restart_hass
 

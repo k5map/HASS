@@ -1,6 +1,28 @@
 #
 # Learn more at https://www.home-assistant.io/components/automation/
 #
+- alias: 'HASS RPi Low Disk Space Alert'
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.disk_use_percent_
+      above: 90
+  action:
+    - service: notify.notify
+      data: 
+        title: "HASS RPi Alert"
+        message: "Low Disk Space > 10% Free"
+
+################################################################
+- alias: 'HASS RPi Low Memory Alert'
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.memory_use_percent
+      above: 90
+  action:
+    - service: notify.notify
+      data: 
+        title: "HASS RPi Alert"
+        message: "Low Memory > 10% Free"
 
 ################################################################
 - alias: 'Update Notification'
@@ -60,7 +82,7 @@
       message: 'Garage lights are on...'
 ################################################################
 - id: hass_theme
-  alias: hass_theme
+  alias: 'HASS Theme'
   initial_state: 'on'
   trigger: 
     - platform: state

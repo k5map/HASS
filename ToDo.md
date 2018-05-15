@@ -2,8 +2,8 @@
 
 - [ ] Investigate and implement OpenGarage
   - [x] Purchase device
-  - [ ] Install device
-  - [ ] Setup device in HASS
+  - [x] Setup device in HASS
+  - [ ] Install device in garage
 - [ ] Investigate and Implement PiVPN
 - [ ] Purchase, install and configure new First Alarm detector
   - [x] Purchase device
