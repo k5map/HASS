@@ -12,6 +12,14 @@ sensor.garage_car_present:
   icon: mdi:car
 
 #
+# System
+#
+sensor.processor_use:
+  icon: mdi:speedometer
+sensor.cpu_temp:
+  icon: mdi:thermometer
+
+#
 # Weather
 #
 sensor.owm_condition:

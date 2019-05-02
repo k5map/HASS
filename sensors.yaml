@@ -35,10 +35,11 @@
 
 - platform: command_line
   name: CPU Temp
-  command: "cat /sys/class/thermal/thermal_zone0/temp"
-  unit_of_measurement: "C"
+  command: "cat /sys/class/thermal/thermal_zone0/temp | awk '{printf \"%.1f\", ((($1*.001) * 1.8))+32}'"
+  unit_of_measurement: "F"
 # C *1.8 + 32 = F
-  value_template: '{{ value | multiply(0.001) | round(1) }}'
+#  command: "cat /sys/class/thermal/thermal_zone0/temp"
+#  value_template: '{{ value | multiply(0.001) | round(1) }}'
 
 - platform: command_line
   name: "HA Uptime"
