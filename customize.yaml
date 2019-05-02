@@ -10,9 +10,25 @@ cover.subaru:
   entity_picture: /local/Subaru-logo-880x660.png
 sensor.garage_car_present:
   icon: mdi:car
+
 #
 # Weather
 #
+sensor.owm_condition:
+  friendly_name: "Conditions"
+  icon: mdi:cup-water
+sensor.owm_temperature:
+  friendly_name: "Outdoor Temperature"
+sensor.owm_humidity:
+  friendly_name: "Outdoor Humidity"
+  icon: mdi:water-percent
+sensor.owm_wind_speed:
+  friendly_name: 'Wind Speed'
+  icon: mdi:weather-windy
+sensor.owm_rain:
+  friendly_name: "Rain Today"
+  icon: mdi:weather-rainy
+
 sensor.pws_weather: 
   friendly_name: 'Weather' 
   icon: mdi:cup-water
@@ -35,6 +51,7 @@ sensor.pws_heat_index_string:
   hidden: true
 sensor.pws_heat_index_f:
   hidden: true
+
 #
 # Speed Test
 #
@@ -47,6 +64,7 @@ sensor.speedtest_upload:
 sensor.speedtest_ping:
   friendly_name: 'Ping'
   icon: mdi:clock-fast
+
 #
 # Stocks
 #
@@ -58,6 +76,7 @@ sensor.slca:
   friendly_name: 'US Silica'
 sensor.clf:
   friendly_name: 'Crude Oil'
+
 #
 # Devices
 #
@@ -74,18 +93,24 @@ switch.den_table_lamp_stairs:
   icon: mdi:lamp
 switch.den_table_lamp_tv:
   icon: mdi:lamp
+switch.front_door_light:
+  icon: mdi:wall-sconce
+switch.garage_light:
+  icon: mdi:ceiling-light
+switch.back_yard_lights:
+  icon: mdi:track-light
+switch.back_door_lights:
+  icon: mdi:ceiling-light
 switch.front_door_xmas_spot_light:
   friendly_name: 'Front Door Xmas Spotlight'
   icon: mdi:spotlight-beam
-switch.back_yard_lights:
-  icon: mdi:spotlight-beam
-switch.christmas_tree__top:
+switch.christmas_tree_top:
   icon: mdi:pine-tree
-switch.christmas_tree__bot:
+switch.christmas_tree_bot:
   icon: mdi:pine-tree
-switch.candle_master_br__bot:
+switch.candle_master_br_bot:
   icon: mdi:candle
-switch.candle_master_br__top:
+switch.candle_master_br_top:
   icon: mdi:candle
 light.fireplace_xmas_lights:
   icon: mdi:led-on
@@ -95,6 +120,7 @@ light.candle_upstairs_bedroom:
   icon: mdi:candle
 light.candle_upstairs_bathroom:
   icon: mdi:candle
+
 #
 # Google Travel
 #
@@ -102,14 +128,13 @@ sensor.home_to_work:
   icon: mdi:car
 sensor.work_to_home:
   icon: mdi:car
+
 #
 # Pollen
 #
-sensor.allergy_index_forecasted_average:
+sensor.allergy_average_forecasted:
   hidden: true
-sensor.allergy_index_historical_average:
-  hidden: true
-sensor.allergy_index_historical_average:
+sensor.allergy_average_historical:
   hidden: true
 sensor.allergy_index_today:
   hidden: true
@@ -119,3 +144,15 @@ sensor.allergy_index_yesterday:
   hidden: true
 sensor.pollen_level:
   icon: mdi:flower
+
+#
+# HP Printer
+#
+sensor.black_ink:
+  icon_color: rgb(0,0,0)
+sensor.cyan_ink:
+  icon_color: rgb(0,255,255)
+sensor.magenta_ink:
+  icon_color: rgb(255,0,255)
+sensor.yellow_ink:
+  icon_color: rgb(255,255,0)

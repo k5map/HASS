@@ -53,11 +53,11 @@ christmas lights:
     - switch.candles
     - switch.christmas_lights_inside
     - switch.christmas_lights_outside
-    - switch.christmas_tree__top
-    - switch.christmas_tree__bot
+    - switch.christmas_tree_top
+    - switch.christmas_tree_bot
     - switch.front_door_xmas_spot_light
-    - switch.candle_master_br__bot
-    - switch.candle_master_br__top
+    - switch.candle_master_br_bot
+    - switch.candle_master_br_top
     - light.fireplace_xmas_lights
     - light.candle_dining_room
     - light.candle_upstairs_bedroom
@@ -106,26 +106,33 @@ weather:
   entities:
     - sensor.pws_weather
     - sensor.pollen_level
-    - sensor.pws_temp_f
-    - sensor.pws_relative_humidity
-    - sensor.pws_feelslike_f
-    - sensor.pws_wind_mph
-    - sensor.pws_precip_today_in
-    - sensor.pws_alerts
+    - sensor.allergy_index_forecasted_average_2
+    - sensor.allergy_index_historical_average_2
+    - sensor.owm_condition
+    - sensor.owm_temperature
+    - sensor.owm_humidity
+    - sensor.owm_wind_speed
+    - sensor.owm_rain
     - sun.sun
-    - sensor.pws_alerts
-    - sensor.pws_heat_index_f
-    - sensor.pws_heat_index_string
-    - sensor.pws_weather_2d
-    - sensor.pws_weather_2n
-    - sensor.pws_observation_time
-    - sensor.pws_station_id
-    - sensor.pws_solarradiation
+#    - sensor.pws_temp_f
+#    - sensor.pws_relative_humidity
+#    - sensor.pws_feelslike_f
+#    - sensor.pws_wind_mph
+#    - sensor.pws_precip_today_in
+#    - sensor.pws_alerts
+#    - sensor.pws_alerts
+#    - sensor.pws_heat_index_f
+#    - sensor.pws_heat_index_string
+#    - sensor.pws_weather_2d
+#    - sensor.pws_weather_2n
+#    - sensor.pws_observation_time
+#    - sensor.pws_station_id
+#    - sensor.pws_solarradiation
 
 Traffic Info:
   entities:
     - sensor.home_to_work 
-    - sensor.work_to_home 
+    - sensor.work_to_home
 
 Internet Test:
   name: Internet
@@ -136,14 +143,16 @@ Internet Test:
 
 System Info:
   entities:
+    - sensor.ha_uptime
     - sensor.processor_use
-    - sensor.disk_use_percent_
+    - sensor.disk_use_percent
     - sensor.memory_use_percent
     - sensor.load_1m
     - sensor.load_5m
     - sensor.load_15m
     - sensor.cpu_temp
     - sensor.installed_ha_version
+    - sensor.current_ha_release
 
 outside devices:
   name: Outside

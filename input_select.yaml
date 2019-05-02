@@ -8,8 +8,14 @@ hass_theme:
   options:
     - default
     - crs
+    - dark_blue
     - dark_cyan
+    - dark_green 
+    - light_blue
+    - light_cyan
+    - light_green
     - maroon
+    - material_dark_green
     - matrix_theme
     - midnight
     - night_theme

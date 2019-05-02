@@ -4,7 +4,7 @@
 - alias: 'HASS RPi Low Disk Space Alert'
   trigger:
     - platform: numeric_state
-      entity_id: sensor.disk_use_percent_
+      entity_id: sensor.disk_use_percent
       above: 90
   action:
     - service: notify.notify
@@ -80,6 +80,17 @@
     service: notify.notify
     data:
       message: 'Garage lights are on...'
+################################################################
+- id: hass_theme
+  alias: 'Set Theme at Startup'
+  initial_state: 'on'
+  trigger: 
+    - platform: homeassistant 
+      event: start
+  action:
+    - service: frontend.set_theme
+      data:
+        name: material_dark_green
 ################################################################
 - id: hass_theme
   alias: 'HASS Theme'
