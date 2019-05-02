@@ -2,6 +2,7 @@ known_devices.yaml
 secrets.yaml
 *.log
 *.db
+home-assistant_v2.*
 deps
 tts
 ./deps
