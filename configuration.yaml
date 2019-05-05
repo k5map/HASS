@@ -24,6 +24,10 @@ frontend:
 #  extra_html_url:
 #    - /local/custom_ui/state-card-tiles.html
 
+# Enables Lovelace interface
+lovelace:
+  mode: yaml
+
 # Enables configuration UI
 config:
 
@@ -56,7 +60,7 @@ logbook:
 
 # Database retention settings
 recorder:
-  purge_keep_days: 5
+  purge_keep_days: 7
 
 # Enables a map showing the location of tracked devices
 map:
@@ -96,7 +100,6 @@ isy994:
 #        host: 172.28.254.15
 #        device_key: opendoor
 #        name: subaru
-
 
 ## DEVICE TRACKER ##
 #device_tracker:

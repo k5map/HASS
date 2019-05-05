@@ -106,15 +106,15 @@
 # Google Travel
 #
 - platform: google_travel_time
-  name: Home to Work
+  name: Home to BVSL
   api_key: !secret api_key_google
   origin: !secret addr_home
-  destination: !secret addr_bvlc
+  destination: !secret addr_bvsl
 
 - platform: google_travel_time
-  name: Work to Home
+  name: BVSL to Home
   api_key: !secret api_key_google
-  origin: !secret addr_bvlc
+  origin: !secret addr_bvsl
   destination: !secret addr_home
 
 #

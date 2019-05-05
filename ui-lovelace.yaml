@@ -1,0 +1,53 @@
+title: My Home
+# Include external resources
+resources:
+  # https://github.com/custom-cards/button-card
+  - url: /local/button-card.js
+    type: module
+  # https://github.com/custom-components/custom_updater
+  - url: /customcards/github/custom-cards/button-card.js?track=true
+    type: module
+
+# Optional background for all views. Check https://developer.mozilla.org/en-US/docs/Web/CSS/background for more examples.
+#background: center / cover no-repeat url("/background.png") fixed
+# Exclude entities from "Unused entities" view
+#excluded_entities:
+#  - weblink.router
+views:
+    # View tab title.
+  - title: Example
+    # Unique path for direct access /lovelace/${path}
+    path: example
+    # Cards
+    cards:
+      - type: "custom:button-card"
+        entity: switch.den_table_lamp_tv
+        name: TV Lamp
+        #icon: midi:sofa
+        #color_type: card
+        color: auto
+
+    # Title of the view. Will be used as the tooltip for tab icon
+  - title: Den
+    type: vertical-stack
+    path: Den
+    icon: mdi:home-assistant
+    cards:
+      - type: "custom:button-card"
+        entity: switch.den_table_lamp_stairs
+        name: Stairs Lamp
+        #icon: midi:sofa
+        color_type: card
+        color: auto
+        styles:
+          card:
+            - height: 110px
+            - width: 110px
+
+      - type: "custom:button-card"
+        entity: switch.den_table_lamp_tv
+        name: TV Lamp
+        #icon: midi:sofa
+        #color_type: card
+        color: auto
+        size: 25%

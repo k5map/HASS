@@ -131,8 +131,8 @@ weather:
 
 Traffic Info:
   entities:
-    - sensor.home_to_work 
-    - sensor.work_to_home
+    - sensor.home_to_bvsl 
+    - sensor.bvsl_to_home
 
 Internet Test:
   name: Internet
