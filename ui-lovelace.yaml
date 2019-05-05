@@ -29,7 +29,7 @@ views:
 
     # Title of the view. Will be used as the tooltip for tab icon
   - title: Den
-    type: vertical-stack
+    type: horizontal-stack
     path: Den
     icon: mdi:home-assistant
     cards:

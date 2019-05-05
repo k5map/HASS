@@ -1,12 +1,18 @@
-known_devices.yaml
-secrets.yaml
-*.log
+# Generic ignores
 *.db
-home-assistant_v2.*
-deps
-tts
+*.db-shm
+*.db-wal
+*.log
+
+# Directory ignores
+.cloud
+.storage
 ./deps
 ./tts
+
+# Specific file ignores
+.config_entries.json
+.ios.conf
 .uuid
-.storage
-.cloud
+known_devices.yaml
+secrets.yaml
