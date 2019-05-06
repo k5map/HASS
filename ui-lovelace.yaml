@@ -15,9 +15,10 @@ resources:
 #  - weblink.router
 views:
     # View tab title.
-  - title: Example
+  - title: Home
     # Unique path for direct access /lovelace/${path}
-    path: example
+    path: home
+    icon: mdi:home
     # Cards
     cards:
       - type: "custom:button-card"
@@ -28,16 +29,15 @@ views:
         color: auto
 
     # Title of the view. Will be used as the tooltip for tab icon
-  - title: Den
-    type: horizontal-stack
-    path: Den
+  - type: horizontal-stack
+    title: Lights
+    path: lights
     icon: mdi:home-assistant
     cards:
       - type: "custom:button-card"
         entity: switch.den_table_lamp_stairs
         name: Stairs Lamp
         #icon: midi:sofa
-        color_type: card
         color: auto
         styles:
           card:
@@ -50,4 +50,70 @@ views:
         #icon: midi:sofa
         #color_type: card
         color: auto
-        size: 25%
+        #size: 25%
+        styles:
+          card:
+            - height: 110px
+            - width: 110px
+
+      - type: "custom:button-card"
+        entity: switch.front_door_light
+        #label_template: >
+        #  var bri = states['light.test_light'].attributes.brightness; 
+        #  return 'Brightness: ' + (bri ? bri : '0') + '%';
+        name: Front Door
+        #icon: midi:sofa
+        color: auto
+        styles:
+          card:
+            - height: 110px
+            - width: 110px
+
+      - type: "custom:button-card"
+        entity: switch.back_door_lights
+        name: Back Door
+        color: auto
+        styles:
+          card:
+            - height: 110px
+            - width: 110px
+
+      - type: "custom:button-card"
+        entity: binary_sensor.backdoor_sensor
+        name: Back Door Motion
+        #icon: midi:sofa
+        color: auto
+        styles:
+          card:
+            - height: 110px
+            - width: 110px
+
+      - type: "custom:button-card"
+        entity: switch.back_yard_lights
+        name: Back Yard
+        #icon: midi:sofa
+        color: auto
+        styles:
+          card:
+            - height: 110px
+            - width: 110px
+
+      - type: "custom:button-card"
+        entity: switch.garage_light
+        name: Garage
+        #icon: midi:sofa
+        color: auto
+        styles:
+          card:
+            - height: 110px
+            - width: 110px
+
+      - type: "custom:button-card"
+        entity: switch.master_bedroom_table_lamp
+        name: Master Bedroom
+        #icon: midi:sofa
+        color: auto
+        styles:
+          card:
+            - height: 110px
+            - width: 110px
