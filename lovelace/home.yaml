@@ -1,0 +1,12 @@
+# Title of the view. Will be used as the tooltip for tab icon
+title: Home
+# Unique path for direct access /lovelace/${path}
+path: home
+icon: mdi:home
+cards:
+  - type: "custom:button-card"
+    entity: switch.den_table_lamp_tv
+    name: TV Lamp
+    #icon: midi:sofa
+    #color_type: card
+    color: auto

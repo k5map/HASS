@@ -1,0 +1,84 @@
+# Title of the view. Will be used as the tooltip for tab icon
+title: Xmas Lights
+path: Xmas
+icon: mdi:candycane
+#panel: true
+cards:
+  - type: vertical-stack
+    cards:
+      - type: "custom:button-card"
+        color_type: label-card
+        #color: var(--paper-item-icon-color) 
+        #color: var(--paper-item-icon-active-color)
+        color: rgb(44, 109, 214)
+        name: Candle Xmas Lights
+      - type: horizontal-stack 
+        cards:
+          - type: "custom:button-card"
+            entity: switch.christmas_tree_bot
+            name: Xmas Tree
+            icon: mdi:candle
+            #color_type: card
+            color: auto
+            
+          - type: "custom:button-card"
+            entity: switch.candle_master_br_bot
+            name: Master Bedroom Candle Bottom
+            #color_type: card
+            color: auto
+            #icon: xxx
+
+          - type: "custom:button-card"
+            entity: switch.candle_master_br_top
+            name: Master Bedroom Candle Top
+            #color_type: card
+            color: auto
+            #icon: xxx
+
+          - type: "custom:button-card"
+            entity: light.candle_dining_room
+            name: Dining Room Candle
+            #color_type: card
+            color: auto
+            #icon: xxx
+
+          - type: "custom:button-card"
+            entity: light.candle_upstairs_bedroom
+            name: Upstairs Bedroom Candle
+            #color_type: card
+            color: auto
+            #icon: xxx
+
+          - type: "custom:button-card"
+            entity: light.candle_upstairs_bathroom
+            name: Upstairs Bathroom Candle
+            #color_type: card
+            color: auto
+            #icon: xxx
+
+      - type: "custom:button-card"
+        color_type: label-card
+        color: rgb(44, 109, 214)
+        name: Other Xmas Lights
+      - type: horizontal-stack 
+        cards:
+          - type: "custom:button-card"
+            entity: switch.christmas_tree_top
+            name: Xmas Tree
+            #color_type: card
+            color: auto
+            #icon: xxx
+
+          - type: "custom:button-card"
+            entity: light.fireplace_xmas_lights
+            name: Fireplace Lights
+            #color_type: card
+            color: auto
+            #icon: xxx
+
+          - type: "custom:button-card"
+            entity: switch.front_door_xmas_spot_light
+            name: Front Door
+            #color_type: card
+            color: auto
+            #icon: xxx
