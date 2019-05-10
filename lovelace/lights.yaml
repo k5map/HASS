@@ -67,9 +67,34 @@ cards:
                 - height: 110px
                 - width: 110px
 
+
+      - type: horizontal-stack    
+        cards: 
           - type: "custom:button-card"
-            entity: binary_sensor.backdoor_sensor
-            name: Back Door Motion
+            entity: binary_sensor.back_doorsensor
+            name: Back Door Sensor
+            #color: auto
+            state:
+                - value: "on"
+                  color: red
+                  #icon: mdi:alert
+                  styles:
+                    card:
+                      - animation: blink 2s ease infinite
+                - operator: default
+                  color: auto
+                  #icon: mdi:shield-check            
+            styles:
+              card:
+                - height: 110px
+                - width: 110px
+              grid:
+                - grid-template-areas: '"i" "n" "s"'
+                #- grid-template-columns: 1fr
+
+          - type: "custom:button-card"
+            entity: switch.master_bedroom_table_lamp
+            name: Bedroom
             color: auto
             styles:
               card:
@@ -77,8 +102,8 @@ cards:
                 - width: 110px
 
           - type: "custom:button-card"
-            entity: switch.master_bedroom_table_lamp
-            name: Master Bedroom
+            entity: binary_sensor.back_doorduskdawn
+            name: Dusk-Dawn
             color: auto
             styles:
               card:

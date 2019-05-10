@@ -71,7 +71,7 @@ cards:
 
           - type: "custom:button-card"
             entity: light.fireplace_xmas_lights
-            name: Fireplace Lights
+            name: Fireplace
             #color_type: card
             color: auto
             #icon: xxx
