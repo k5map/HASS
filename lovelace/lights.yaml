@@ -67,12 +67,15 @@ cards:
                 - height: 110px
                 - width: 110px
 
-
       - type: horizontal-stack    
         cards: 
           - type: "custom:button-card"
             entity: binary_sensor.back_doorsensor
-            name: Back Door Sensor
+            name: Back Door
+            label_template: >
+              return printf 'Back Door\nSensor';
+            show_label: false
+            show_name: true           
             #color: auto
             state:
                 - value: "on"

@@ -23,35 +23,37 @@ cards:
             
           - type: "custom:button-card"
             entity: switch.candle_master_br_bot
-            name: Master Bedroom Candle Bottom
+            name: Master Bedroom B
             #color_type: card
             color: auto
             #icon: xxx
 
           - type: "custom:button-card"
             entity: switch.candle_master_br_top
-            name: Master Bedroom Candle Top
+            name: Master Bedroom T
             #color_type: card
             color: auto
             #icon: xxx
 
+      - type: horizontal-stack 
+        cards:
           - type: "custom:button-card"
             entity: light.candle_dining_room
-            name: Dining Room Candle
+            name: Dining Room
             #color_type: card
             color: auto
             #icon: xxx
 
           - type: "custom:button-card"
             entity: light.candle_upstairs_bedroom
-            name: Upstairs Bedroom Candle
+            name: Upstairs Bedroom
             #color_type: card
             color: auto
             #icon: xxx
 
           - type: "custom:button-card"
             entity: light.candle_upstairs_bathroom
-            name: Upstairs Bathroom Candle
+            name: Upstairs Bathroom
             #color_type: card
             color: auto
             #icon: xxx
