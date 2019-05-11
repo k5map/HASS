@@ -31,7 +31,7 @@ traffic_view:
 birthday_view:
   name: Birthdays
   view: yes
-  icon: mdi:candle
+  icon: mdi:cake-layered
   entities:
     - group.birthday_info
 

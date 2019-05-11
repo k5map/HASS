@@ -20,3 +20,5 @@ views:
   - !include lovelace/home.yaml
   - !include lovelace/lights.yaml
   - !include lovelace/xmas.yaml
+  - !include lovelace/system.yaml
+  - !include lovelace/finance.yaml

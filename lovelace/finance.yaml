@@ -1,8 +1,8 @@
 # Title of the view. Will be used as the tooltip for tab icon
-title: Home
+title: Finance
 # Unique path for direct access /lovelace/${path}
-path: home
-icon: mdi:home
+path: finance
+icon: mdi:currency-usd
 cards:
   - type: "custom:button-card"
     entity: switch.den_table_lamp_tv
@@ -10,6 +10,3 @@ cards:
     #icon: midi:sofa
     #color_type: card
     color: auto
-
-
-# add aniversary dates

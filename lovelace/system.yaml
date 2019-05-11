@@ -1,0 +1,49 @@
+# Title of the view. Will be used as the tooltip for tab icon
+title: System
+# Unique path for direct access /lovelace/${path}
+path: system
+icon: mdi:laptop-windows
+cards:
+  - type: vertical-stack
+    cards:
+    - type: horizontal-stack
+      cards:
+      - type: gauge
+        name: CPU Usage
+        unit: '%'
+        entity: sensor.processor_use
+        severity:
+          green: 0
+          yellow: 50
+          red: 85
+
+      - type: gauge
+        name: Memory
+        unit: '%'
+        entity: sensor.memory_use_percent
+        severity:
+          green: 0
+          yellow: 50
+          red: 85
+          
+      - type: gauge
+        name: Disk Use
+        unit: '%'
+        entity: sensor.disk_use_percent
+        severity:
+          green: 0
+          yellow: 50
+          red: 85
+          
+    - type: horizontal-stack
+      cards:
+      - type: gauge
+        name: CPU Temp
+        unit: 'F'
+        entity: sensor.cpu_temp
+        min: 100
+        max: 120
+        severity:
+          green: 100
+          yellow: 105
+          red: 110

@@ -112,3 +112,5 @@ cards:
               card:
                 - height: 110px
                 - width: 110px
+
+# add conditional card for motion sensor battery
