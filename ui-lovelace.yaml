@@ -8,6 +8,9 @@ resources:
   # https://github.com/custom-components/custom_updater
   - url: /customcards/github/custom-cards/button-card.js?track=true
     type: module
+  # https://github.com/custom-cards/decluttering-card 
+  - url: /local/decluttering-card.js
+    type: module
 
 # Optional background for all views. Check https://developer.mozilla.org/en-US/docs/Web/CSS/background for more examples.
 #background: center / cover no-repeat url("/background.png") fixed

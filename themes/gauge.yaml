@@ -1,0 +1,9 @@
+gauge_theme:
+  ### colors for guage card ###
+  label-badge-blue: "#55acee" 
+  label-badge-green: "#00cc00" 
+  #label-badge-green: "#9bc53d" 
+  label-badge-yellow: "#ffff00" 
+  #label-badge-yellow: "#fde74c" 
+  label-badge-red: "#c3423f"
+

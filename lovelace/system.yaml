@@ -12,6 +12,7 @@ cards:
         name: CPU Usage
         unit: '%'
         entity: sensor.processor_use
+        theme: gauge_theme
         severity:
           green: 0
           yellow: 50
@@ -21,6 +22,7 @@ cards:
         name: Memory
         unit: '%'
         entity: sensor.memory_use_percent
+        theme: gauge_theme
         severity:
           green: 0
           yellow: 50
@@ -30,6 +32,7 @@ cards:
         name: Disk Use
         unit: '%'
         entity: sensor.disk_use_percent
+        theme: gauge_theme
         severity:
           green: 0
           yellow: 50
@@ -41,6 +44,7 @@ cards:
         name: CPU Temp
         unit: 'F'
         entity: sensor.cpu_temp
+        theme: gauge_theme
         min: 100
         max: 120
         severity:
