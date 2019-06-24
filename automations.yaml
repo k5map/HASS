@@ -35,6 +35,16 @@
       title: 'New HA release'
       message: 'Home Assistant {{states.updater.updater.state}} is now available...'
 
+- alias: 'Update Popup'
+  trigger:
+    platform: state
+    entity_id: updater.updater
+  action:
+    service: persistent_notification.create
+    data:
+      title: 'New HA release'
+      message: 'Home Assistant {{states.updater.updater.state}} is now available...'
+
 ################################################################
 - alias: 'HASS Start'
   trigger:
