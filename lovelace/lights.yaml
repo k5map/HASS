@@ -30,8 +30,8 @@ cards:
                 - width: 110px
 
           - type: "custom:button-card"
-            entity: switch.front_door_light
-            name: Front Door
+            entity: switch.master_bedroom_table_lamp
+            name: Bedroom
             color: auto
             styles:
               card:
@@ -40,6 +40,15 @@ cards:
 
       - type: horizontal-stack    
         cards: 
+          - type: "custom:button-card"
+            entity: switch.front_door_light
+            name: Front Door
+            color: auto
+            styles:
+              card:
+                - height: 110px
+                - width: 110px
+
           - type: "custom:button-card"
             entity: switch.back_door_lights
             name: Back Door
@@ -58,6 +67,8 @@ cards:
                 - height: 110px
                 - width: 110px
 
+      - type: horizontal-stack    
+        cards: 
           - type: "custom:button-card"
             entity: switch.garage_light
             name: Garage
@@ -67,8 +78,6 @@ cards:
                 - height: 110px
                 - width: 110px
 
-      - type: horizontal-stack    
-        cards: 
           - type: "custom:button-card"
             entity: binary_sensor.back_doorsensor
             name: Back Door
@@ -94,15 +103,6 @@ cards:
               grid:
                 - grid-template-areas: '"i" "n" "s"'
                 #- grid-template-columns: 1fr
-
-          - type: "custom:button-card"
-            entity: switch.master_bedroom_table_lamp
-            name: Bedroom
-            color: auto
-            styles:
-              card:
-                - height: 110px
-                - width: 110px
 
           - type: "custom:button-card"
             entity: binary_sensor.back_doorduskdawn

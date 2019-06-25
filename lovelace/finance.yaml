@@ -4,9 +4,53 @@ title: Finance
 path: finance
 icon: mdi:currency-usd
 cards:
-  - type: "custom:button-card"
-    entity: switch.den_table_lamp_tv
-    name: TV Lamp
-    #icon: midi:sofa
-    #color_type: card
-    color: auto
+      - type: horizontal-stack
+        cards:
+        - type: gauge
+          name: Ping
+          unit: 'ms'
+          entity: sensor.speedtest_ping
+          theme: gauge_theme
+          min: 0
+          max: 500
+          severity:
+            green: 0
+            yellow: 120
+            red: 180
+        - type: gauge
+          name: Download
+          unit: 'Mb/s'
+          entity: sensor.speedtest_download
+          theme: gauge_theme
+          min: 0
+          max: 25
+          severity:
+            red: 0
+            yellow: 5
+            green: 10
+        - type: gauge
+          name: Upload
+          unit: 'Mb/s'
+          entity: sensor.speedtest_upload
+          theme: gauge_theme
+          min: 0
+          max: 25
+          severity:
+            red: 0
+            yellow: 5
+            green: 10
+
+
+      - type: custom:mini-graph-card
+        name: "Internet Performace"
+        height: 75
+        hour24: true
+        show:
+          icon: false
+          extrema: true
+          fill: false
+        entities:
+          - entity: sensor.speedtest_download
+#            name: "Приём"
+          - entity: sensor.speedtest_upload
+#            name: "Отправка"

@@ -6,48 +6,100 @@ icon: mdi:laptop-windows
 cards:
   - type: vertical-stack
     cards:
-    - type: horizontal-stack
-      cards:
-      - type: gauge
-        name: CPU Usage
-        unit: '%'
-        entity: sensor.processor_use
-        theme: gauge_theme
-        severity:
-          green: 0
-          yellow: 50
-          red: 85
+      - type: "custom:button-card"
+        color_type: label-card
+#        color: rgb(44, 109, 214)
+        name: System Data
 
-      - type: gauge
-        name: Memory
-        unit: '%'
-        entity: sensor.memory_use_percent
-        theme: gauge_theme
-        severity:
-          green: 0
-          yellow: 50
-          red: 85
+      - type: horizontal-stack
+        cards:
+        - type: gauge
+          name: CPU Usage
+          unit: '%'
+          entity: sensor.processor_use
+          theme: gauge_theme
+          severity:
+            green: 0
+            yellow: 50
+            red: 85
+        - type: gauge
+          name: Memory
+          unit: '%'
+          entity: sensor.memory_use_percent
+          theme: gauge_theme
+          severity:
+            green: 0
+            yellow: 50
+            red: 85
+        - type: gauge
+          name: Disk Use
+          unit: '%'
+          entity: sensor.disk_use_percent
+          theme: gauge_theme
+          severity:
+            green: 0
+            yellow: 50
+            red: 85
           
-      - type: gauge
-        name: Disk Use
-        unit: '%'
-        entity: sensor.disk_use_percent
-        theme: gauge_theme
-        severity:
-          green: 0
-          yellow: 50
-          red: 85
-          
-    - type: horizontal-stack
-      cards:
-      - type: gauge
-        name: CPU Temp
-        unit: 'F'
-        entity: sensor.cpu_temp
-        theme: gauge_theme
-        min: 100
-        max: 120
-        severity:
-          green: 100
-          yellow: 105
-          red: 110
+      - type: horizontal-stack
+        cards:
+        - type: gauge
+          name: CPU Temp
+          unit: 'F'
+          entity: sensor.cpu_temp
+          theme: gauge_theme
+          min: 100
+          max: 120
+          severity:
+            green: 100
+            yellow: 105
+            red: 110
+
+      - type: horizontal-stack
+        cards:
+        - type: custom:mini-graph-card
+#          show:
+#            icon: false
+#          name: "CPU use"
+          hour24: true
+          entities:
+            - sensor.speedtest_ping
+          color_thresholds:
+            - value: 0
+              color: green
+            - value: 70
+              color: lightgreen
+            - value: 100
+              color: yellow
+            - value: 200
+              color: red
+          tap_action:
+            action: more-info
+        - type: custom:mini-graph-card
+          hour24: true
+          icon: midi:arrow-down-thick
+          entities:
+            - sensor.speedtest_download
+          color_thresholds:
+            - value: 0
+              color: red
+            - value: 10
+              color: yellow
+            - value: 20
+              color: green
+          tap_action:
+            action: more-info
+        - type: custom:mini-graph-card
+          hour24: true
+          icon: midi:arrow-up-thick
+          entities:
+            - sensor.speedtest_upload
+          color_thresholds:
+            - value: 0
+              color: red
+            - value: 10
+              color: yellow
+            - value: 20
+              color: green
+          tap_action:
+            action: more-info

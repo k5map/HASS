@@ -11,7 +11,10 @@ resources:
   # https://github.com/custom-components/custom_updater
   - url: /customcards/github/custom-cards/button-card.js?track=true
     type: module
-
+  # https://github.com/kalkih/mini-graph-card
+  - url: /local/mini-graph-card-bundle.js?v=0.4.3
+    type: module
+    
 # Optional background for all views. Check https://developer.mozilla.org/en-US/docs/Web/CSS/background for more examples.
 #background: center / cover no-repeat url("/background.png") fixed
 
